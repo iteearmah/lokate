@@ -9,6 +9,12 @@ var page = new tabris.Page({
   title: "Lokate",
   topLevel: true
 });
+ window.plugins.GPSLocator.getLocation(function(result){
+    //result[0]:latitude,result[1]:longitude.
+    navigator.notification.alert(JSON.stringify(result));
+    },function(e){
+        navigator.notification.alert(JSON.stringify(e));
+    });
 
  // Android customization
 /*cordova.plugins.backgroundMode.setDefaults({

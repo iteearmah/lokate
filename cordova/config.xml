@@ -15,5 +15,5 @@
     <plugin name="cordova-plugin-dialogs" />
     <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-network-information" />
-    <plugin name="cordova-plugin-geolocation" />
+    <plugin name="https://github.com/Moussawi7/Cordova-GPSLocator.git" />
 </widget>
