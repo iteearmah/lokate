@@ -14,15 +14,13 @@ var page = new tabris.Page({
 });
 
  // Android customization
-cordova.plugins.backgroundMode.setDefaults({
+/*cordova.plugins.backgroundMode.setDefaults({
    title:'PentTV',
    text:"It's all about Jesus",
   ticker: 'Nokofiooo'
-})
-     cordova.plugins.backgroundMode.configure({
-               
-            });
-    // Enable background mode
+})*/
+     
+/*    // Enable background mode
     cordova.plugins.backgroundMode.enable();
 
     // Called when background mode has been activated
@@ -49,7 +47,7 @@ navigator.notification.beep(1);
     }, 3000);
 
 });
-
+*/
 
 /*admob.initAdmob("ca-app-pub-3282562808664310/2431822278","ca-app-pub-3282562808664310/5267537477");
 admob.showBanner(admob.BannerSize.BANNER,admob.Position.BOTTOM_CENTER);*/
