@@ -1,7 +1,4 @@
-var utils=require("./utils.js");
-
-
-var newsItems=utils.newsItems();
+//var utils=require("./utils.js");
 var IMAGE_PATH='src/images/';
 var PAGE_MARGIN = 16;
 var IMAGE_SIZE = 120;
