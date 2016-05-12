@@ -16,4 +16,9 @@
     <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="https://github.com/Moussawi7/Cordova-GPSLocator.git" />
+    <plugin name="com.eclipsesource.tabris.maps" spec="https://github.com/eclipsesource/tabris-maps.git">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyDlX7JOr_kGkbXVdu4VFCvrE_JdpzbzD7U" />
+    </plugin>
+    <hook src="hooks/api_key_hook.js" type="before_platform_add" />
 </widget>
+
