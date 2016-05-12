@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ruarch.penttvlive" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Lokate</name>
+    <description>
+       Lokate | Just close to you
+    </description>
+    <author email="iteearmah@gmail.com" href="http://ruarch.net">
+        Samuel Armah
+    </author>
+    <content src="package.json" />
+    <access origin="*" />
+     <platform name="android">
+        <icon src="ic_launcher.png" />
+    </platform>
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="de.appplant.cordova.plugin.badge" />
+    <plugin name="https://github.com/admob-google/admob-cordova.git" />
+    <plugin name="https://github.com/nchutchind/cordova-plugin-streaming-media.git" />
+    <plugin name="https://github.com/katzer/cordova-plugin-background-mode.git" />
+    <plugin name="https://github.com/apache/cordova-plugin-splashscreen.git" />
+    <plugin name="https://github.com/apache/cordova-plugin-geolocation.git" />
+
+    <platform name="android">
+     <splash src="splash-screen.png"/>
+    </platform>
+    <preference name="SplashScreenDelay" value="10000" />
+</widget>
