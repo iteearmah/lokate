@@ -7,7 +7,7 @@ var PAGE_MARGIN = 16;
 var IMAGE_SIZE = 120;
 var MARGIN = 12;
 var MARGIN_LARGE = 24;
-navigator.splashscreen.show();
+//navigator.splashscreen.show();
 var page = new tabris.Page({
   title: "Lokate",
   topLevel: true
