@@ -1,6 +1,6 @@
 {
-  "name": "penttvlive",
-  "description": "Pent TV | It's all about Jesus",
+  "name": "lokate",
+  "description": "Lokate | Just close to you",
   "main": "src/mainapp.js",
   "dependencies": {
     "tabris": "https://tabrisjs.com/downloads/nightly/tabris.tgz"
