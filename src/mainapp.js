@@ -9,14 +9,66 @@ var page = new tabris.Page({
   title: "Lokate",
   topLevel: true
 });
+
+tabris.ui.set("background", "#3E50B3");
  window.plugins.GPSLocator.getLocation(function(result){
     //result[0]:latitude,result[1]:longitude.
-    navigator.notification.alert(JSON.stringify(result));
-    },function(e){
-        navigator.notification.alert(JSON.stringify(e));
-    });
+    //navigator.notification.alert(JSON.stringify(result));
+    displayMap(result,page);
+},function(e){
+    navigator.notification.alert(JSON.stringify(e));
+});
 
- // Android customization
+
+function displayMap(result,page) 
+{
+  var webview = new tabris.WebView({
+  layoutData: {left: 0, top: 0, right: 0, bottom: 0},
+  html:mapDisplay(result)
+  }).appendTo(page);
+  /*var map = tabris.create("ESMap", {
+    layoutData: {left: 0, right: 0, top: 0, height: 200}
+  }).on("ready", function() {
+  }).appendTo(page);
+
+  var locationButtons = tabris.create("Composite", {
+    layoutData: {centerX: 0, top: [map, 10]}
+  }).appendTo(page);*/
+}
+
+function mapDisplay(result)
+{
+  var disp='<!DOCTYPE html>'+
+'<html>'+
+  '<head>'+
+    '<title>View Map</title>'+
+    '<meta name="viewport" content="initial-scale=1.0">'+
+    '<meta charset="utf-8">'+
+    '<style>'+
+      'html, body {'+
+        'height: 100%;'+
+        'margin: 0;'+
+        'padding: 0;'+
+      '}'+
+      '#map {'+
+        'height: 100%;'+
+      '}'+
+    '</style>'+
+  '</head>'+
+ '<div id="map" style="height:100%"><h4>Map Here</h4></div>'+
+ '<script>'+
+      'var map;'+
+      'function initMap() {'+
+        'map = new google.maps.Map(document.getElementById(\'map\'), {'+
+         'center: {lat: '+result[0]+', lng: '+result[1]+'},'+
+          'zoom: 15'+
+        '});'+
+      '}'+
+   '<\/script>'+
+  '<script src="https:\/\/maps.googleapis.com\/maps\/api\/js?key=AIzaSyD6vBXS1oPbnL4ziCmiVy986cs12H1Xyjk&callback=initMap"'+
+  'async defer><\/script>';
+ return disp;
+}
 /*cordova.plugins.backgroundMode.setDefaults({
    title:'PentTV',
    text:"It's all about Jesus",
@@ -63,8 +115,6 @@ drawer.append(new tabris.PageSelector());*/
   layoutData: {left: 0, right: 0, top: 0, height: 200}
 }).appendTo(drawer);*/
 //drawerModule.leftSlideMenu(drawerImage,drawer);
-tabris.ui.set("background", "#3E50B3");
-
 
 
 page.open();

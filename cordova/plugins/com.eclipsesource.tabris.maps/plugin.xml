@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.eclipsesource.tabris.maps"
+        version="1.2.0">
+
+    <name>Tabris Maps Widget</name>
+
+    <description>A custom map widget for Tabris based on Google Maps.</description>
+
+    <author>EclipseSource</author>
+
+    <!-- cordova -->
+    <engines>
+        <engine name="cordova" version=">=3.8.0" />
+    </engines>
+
+    <js-module src="www/mapWidget.js" name="maps">
+      <runs />
+    </js-module>
+
+    <js-module src="www/markerWidget.js" name="marker">
+      <runs />
+    </js-module>
+
+    <platform name="android">
+
+        <info>
+             In order to run this plugin, you need to obtain Google Maps API key for Android.
+             TODO
+        </info>
+
+        <preference name="API_KEY_FOR_ANDROID" />
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data
+              android:name="com.google.android.maps.v2.API_KEY"
+              android:value="$API_KEY_FOR_ANDROID" />
+            <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+            <meta-data
+              android:name="com.eclipsesource.tabris.android.OPERATOR.com.eclipsesource.tabris.maps"
+              android:value="com.eclipsesource.tabris.maps.MapOperator" />
+            <meta-data
+              android:name="com.eclipsesource.tabris.android.OPERATOR.com.eclipsesource.tabris.maps.marker"
+              android:value="com.eclipsesource.tabris.maps.MarkerOperator" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        </config-file>
+
+        <framework src="com.google.android.gms:play-services-maps:7.8.0" />
+
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapHolderView.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapOperator.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapPropertyHandler.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapClickListener.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapLongClickListener.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapCameraChangeListener.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MapValidator.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MarkerOperator.java" target-dir="src/com/eclipsesource/tabris/maps" />
+        <source-file src="src/android/com/eclipsesource/tabris/maps/MarkerPropertyHandler.java" target-dir="src/com/eclipsesource/tabris/maps" />
+    </platform>
+
+    <platform name="ios">
+        <!-- Hooks -->
+        <hook type="after_plugin_install" src="scripts/custom-widget.js" />
+        <hook type="after_plugin_install" src="scripts/change-project-settings.js" />
+        <hook type="after_plugin_install" src="scripts/setup-bridging-header.js" />
+
+        <!-- Source files -->
+        <source-file src="src/ios/ESMap.swift" />
+        <source-file src="src/ios/ESMarker.swift" />
+        <source-file src="src/ios/ESMaps-Bridging-Header.h" />
+
+        <!-- Required frameworks -->
+        <framework src="MapKit.framework" />
+
+    </platform>
+
+</plugin>

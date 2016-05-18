@@ -1,0 +1,13 @@
+{
+    "com.eclipsesource.tabris.maps": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/eclipsesource/tabris-maps",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "API_KEY_FOR_ANDROID": "AIzaSyDlX7JOr_kGkbXVdu4VFCvrE_JdpzbzD7U"
+        }
+    }
+}
