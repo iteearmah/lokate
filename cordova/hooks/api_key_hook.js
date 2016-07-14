@@ -6,15 +6,15 @@ module.exports = function(context) {
   var cfg = new ConfigParser(xml);
 
   cfg.doc
-    .findall("plugin/[@name='com.eclipsesource.tabris.maps']")[0]
-    .findall("variable/[@name='API_KEY_FOR_ANDROID']")[0]
+    .findall("plugin/[@name='com.ruarch.lokate']")[0]
+    .findall("variable/[@name='AIzaSyCQglm9y3bHC2MYYM3KyGGNzCp4oEw7CRc']")[0]
     .set("value", process.env.API_KEY_FOR_ANDROID);
 
   console.log(
     "Setting API key to: " +
     cfg.doc
-      .findall("plugin/[@name='com.eclipsesource.tabris.maps']")[0]
-      .findall("variable/[@name='API_KEY_FOR_ANDROID']")[0]
+      .findall("plugin/[@name='com.ruarch.lokate']")[0]
+      .findall("variable/[@name='AIzaSyCQglm9y3bHC2MYYM3KyGGNzCp4oEw7CRc']")[0]
       .get("value")
   );
 
